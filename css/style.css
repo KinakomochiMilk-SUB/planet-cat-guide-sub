@@ -1,0 +1,148 @@
+:root {
+  --accent: #f47b20;
+  --accent-dark: #c95a0b;
+  --accent-light: #fff0a6;
+  --yellow: #ffd447;
+  --yellow-light: #fff7cf;
+
+  --text: #3d2a16;
+  --muted: #775b3b;
+  --surface: #fffdf5;
+  --page: #fff4d6;
+  --border: #f2c66d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.8;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 14px clamp(16px, 4vw, 56px);
+  background: var(--accent);
+  border-bottom: 4px solid var(--yellow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  border: 2px solid var(--yellow);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.site-nav a {
+  padding: 8px 13px;
+  border-radius: 999px;
+  color: white;
+  font-size: 0.94rem;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  background: var(--yellow);
+  color: var(--accent-dark);
+}
+
+main {
+  width: min(900px, calc(100% - 32px));
+  margin: 48px auto;
+}
+
+.hero,
+.server-mood {
+  padding: clamp(24px, 5vw, 48px);
+  background: var(--surface);
+  border: 2px solid var(--yellow);
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgb(160 90 10 / 10%);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.25;
+}
+
+.hero-lead {
+  margin: 12px 0 24px;
+  color: var(--accent-dark);
+  font-size: clamp(1.1rem, 3vw, 1.45rem);
+  font-weight: 700;
+}
+
+.server-mood {
+  margin-top: 20px;
+  background: var(--yellow-light);
+}
+
+h2 {
+  margin-top: 0;
+  padding-left: 12px;
+  border-left: 6px solid var(--accent);
+  font-size: 1.35rem;
+}
+
+footer {
+  padding: 24px 16px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .site-nav {
+    width: 100%;
+  }
+
+  .site-nav a {
+    padding: 7px 10px;
+  }
+
+  main {
+    margin-top: 24px;
+  }
+}
